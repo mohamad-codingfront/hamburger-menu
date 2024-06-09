@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #616161;
+}
+
+.menu-burger {
+    width: 56px;
+    height: 56px;
+    position: relative;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.burger-inner {
+    width: 40px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all .5s ease;
+
+}
+
+.burger-inner::after,
+.burger-inner::before {
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all .5s ease;
+}
+
+.menu-burger .burger-inner::after {
+    transform: translateY(-12px);
+}
+
+.menu-burger .burger-inner::before {
+    transform: translateY(12px);
+}
+
+.menu-burger.open .burger-inner {
+    transform: translateX(-40px);
+    background-color: transparent;
+}
+
+.menu-burger.open .burger-inner::after {
+    transform: translate(30px, 0) rotate(45deg);
+}
+
+.menu-burger.open .burger-inner::before {
+    transform: translate(30px, 0) rotate(-45deg);
+}
+
+
+.list {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    position: absolute;
+    top: -10%;
+    transition: all .5s ease;
+    background-color: #442b60;
+    color: #fff;
+}
+
+.list li {
+    font-size: 20px;
+    margin: 0 40px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+
+.list li:hover {
+    background-color: #fff;
+    color: #442b60;
+}
